@@ -1,1 +1,6 @@
-<app-bestgame></app-bestgame>
+<h1>Best Game</h1>
+<app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
+<h1>Best Remake</h1>
+<app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
+
+<button (click)="submit()">Submit</button>

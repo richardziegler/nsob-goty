@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/internal/Observable';
 import { map, startWith } from 'rxjs/operators';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
-import eligibleGames from '../../assets/gamelist';
 
 @Component({
   selector: 'app-bestgame',
@@ -11,10 +10,11 @@ import eligibleGames from '../../assets/gamelist';
   styleUrls: ['./bestgame.component.css']
 })
 export class BestgameComponent implements OnInit {
+  @Input() games: string[];
+  @Input() choices: string[];
+
   gameControl = new FormControl('');
-  games = eligibleGames;
   filteredGames: Observable<string[]>
-  chosenGames = [];
 
   constructor() { }
 
@@ -27,22 +27,21 @@ export class BestgameComponent implements OnInit {
   }
 
   onOptionSelected(event) {
-    if (this.chosenGames.length < 10) {
+    if (this.choices.length < 10) {
       var title = event.option.value;
-      this.chosenGames.push(title);
+      this.choices.push(title);
       this.games = this.games.filter(x => x !== title);
       this.gameControl.setValue('');
     }
-
-    console.log(this.chosenGames);
+    console.log('hi', this.choices);
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.chosenGames, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.choices, event.previousIndex, event.currentIndex);
   }
 
   remove(game: string) {
-    this.chosenGames = this.chosenGames.filter(x => x !== game);
+    this.choices = this.choices.filter(x => x !== game);
     this.games.push(game);
     this.games = this.games.sort();
     this.gameControl.setValue('');
