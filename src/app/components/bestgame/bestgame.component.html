@@ -1,0 +1,8 @@
+<mat-form-field>
+  <input type="text" matInput [formControl]="gameControl" [matAutocomplete]="auto">
+</mat-form-field>
+<mat-autocomplete #auto="matAutocomplete">
+  <mat-option *ngFor="let game of filteredGames | async " [value]="game">
+    {{game}}
+  </mat-option>
+</mat-autocomplete>
