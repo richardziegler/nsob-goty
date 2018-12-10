@@ -14,7 +14,8 @@ export class BestgameComponent implements OnInit {
   @Input() choices: string[];
 
   gameControl = new FormControl('');
-  filteredGames: Observable<string[]>
+  filteredGames: Observable<string[]>;
+  hasSelectedGame: Boolean = false;
 
   constructor() { }
 
@@ -32,6 +33,7 @@ export class BestgameComponent implements OnInit {
       this.choices.push(title);
       this.games = this.games.filter(x => x !== title);
       this.gameControl.setValue('');
+      this.hasSelectedGame = true;
     }
     console.log('hi', this.choices);
   }
@@ -45,6 +47,9 @@ export class BestgameComponent implements OnInit {
     this.games.push(game);
     this.games = this.games.sort();
     this.gameControl.setValue('');
+    if (this.choices.length < 1) {
+      this.hasSelectedGame = false;
+    }
   }
 
   private _filter(value: string): string[] {

@@ -1,5 +1,5 @@
 <mat-form-field>
-  <input type="text" matInput [formControl]="gameControl" [matAutocomplete]="auto">
+  <input type="text" matInput [formControl]="gameControl" [matAutocomplete]="auto" placeholder="Artifact, Hitman II, Minecraft, etc...">
 </mat-form-field>
 <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onOptionSelected($event)">
   <mat-option *ngFor="let game of filteredGames | async " [value]="game">
@@ -7,7 +7,8 @@
   </mat-option>
 </mat-autocomplete>
 
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+
+<div *ngIf="hasSelectedGame" cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
   <div class="example-box" *ngFor="let chosenGame of choices" cdkDrag>
     {{chosenGame}}
     <button (click)="remove(chosenGame)">X</button>
