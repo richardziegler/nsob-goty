@@ -1,1 +1,11 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+html {
+    font-family: 'Indie Flower', cursive;
+    color: palegreen;
+    background-color: lightslategrey;
+    
+}
