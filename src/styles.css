@@ -9,3 +9,11 @@ html {
     background-color: lightslategrey;
     
 }
+
+body {
+    padding: 15px;
+}
+
+.example-box {
+    background-color: red;
+}
