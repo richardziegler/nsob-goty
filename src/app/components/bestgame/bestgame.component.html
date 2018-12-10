@@ -1,8 +1,19 @@
+<!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+</div> -->
+
 <mat-form-field>
   <input type="text" matInput [formControl]="gameControl" [matAutocomplete]="auto">
 </mat-form-field>
-<mat-autocomplete #auto="matAutocomplete">
+<mat-autocomplete #auto="matAutocomplete" (optionSelected)="onOptionSelected($event)">
   <mat-option *ngFor="let game of filteredGames | async " [value]="game">
     {{game}}
   </mat-option>
 </mat-autocomplete>
+
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let chosenGame of chosenGames" cdkDrag>
+    {{chosenGame}}
+    <button (click)="remove(chosenGame)">X</button>
+  </div>
+</div>
