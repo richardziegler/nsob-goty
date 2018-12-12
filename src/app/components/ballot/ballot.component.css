@@ -1,0 +1,58 @@
+::ng-deep .mat-raised-button{
+    min-height: 250px !important;
+    width:60% !important;
+    font-size:280px !important;
+    background-color: fuchsia !important;
+    color: white;
+    align-content: center;
+}
+
+.ballot-container{
+    width: 50%;
+    display:grid;
+    grid-row: auto auto;
+    grid-template-columns: 100% 100%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+.ballot-box{
+    padding:20px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  
+  @media (max-width: 812px) { 
+
+    .ballot-container{
+        width: 100%;
+        display:grid;
+        grid-row: auto;
+        grid-template-columns: 50%;
+        /* grid-column-gap: 20px; */
+        grid-row-gap: 20px;
+      }
+
+      .ballot-box{
+        padding:20px;
+        border-radius:10px;
+        display:flex;
+        align-items:center;
+      }
+
+      ::ng-deep .mat-raised-button{
+        min-height: 200px !important;
+        width:60% !important;
+        font-size:60px !important;
+        background-color: fuchsia !important;
+        color: white;
+        align-content: center;
+    }
+
+    app-bestgame {
+        size: 50%;
+    }
+
+}

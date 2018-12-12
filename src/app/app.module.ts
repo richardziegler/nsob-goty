@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatButtonModule } from '@angular/material';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BallotComponent } from './components/ballot/ballot.component';
 
@@ -30,6 +30,7 @@ import { BallotComponent } from './components/ballot/ballot.component';
     ReactiveFormsModule,
     MatInputModule,
     DragDropModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
