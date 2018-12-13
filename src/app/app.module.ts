@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule, MatButtonModule } from '@angular/material';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BallotComponent } from './components/ballot/ballot.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BallotComponent } from './components/ballot/ballot.component';
     ReactiveFormsModule,
     MatInputModule,
     DragDropModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

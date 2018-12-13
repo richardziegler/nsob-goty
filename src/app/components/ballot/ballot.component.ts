@@ -25,7 +25,9 @@ export class BallotComponent implements OnInit {
     ballot.name = "Ian Barczewski";
     ballot.chosenBestGames = this.chosenGames.map(x => new Choice(x));
     ballot.chosenBestRemasters = this.chosenRemasters.map(x => new Choice(x));
-    this.submissionService.submit(ballot);
+    this.submissionService.submit(ballot).subscribe(foo => {
+      console.log(foo);
+    });
   }
 
 }
