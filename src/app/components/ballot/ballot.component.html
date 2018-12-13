@@ -1,26 +1,26 @@
 <div class="ballot-container">
   <div class="ballot-box">
-    <h1>Best Game</h1>
+    <h1 class="ballot-header">Best Game</h1>
     <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
   </div>
 
   <div class="ballot-box">
-    <h1>Biggest Disappointment</h1>
+    <h1 class="ballot-header" id="disappointing-form">Biggest Disappointment</h1>
     <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
   </div>
 
   <div class="ballot-box">
-    <h1>Biggest Surprise</h1>
+    <h1 class="ballot-header">Biggest Surprise</h1>
     <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
   </div>
 
   <div class="ballot-box">
-    <h1>Best Remake</h1> <br />
+    <h1 class="ballot-header">Best Remake</h1>
     <app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
   </div>
 
   <div class="ballot-box">
-    <h1>Most Anticipated</h1> <br />
+    <h1 class="ballot-header">Most Anticipated</h1>
     <app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
   </div>
 </div>
