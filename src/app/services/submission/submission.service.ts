@@ -8,7 +8,7 @@ import { RequestOptions } from '@angular/http';
 })
 export class SubmissionService {
   scoring = [15, 12, 10, 8, 6, 5, 4, 3, 2, 1];
-  options = { headers: new HttpHeaders().set('Content-Type', 'application/json').append('Authorization', 'authtoken') };
+  options = { headers: new HttpHeaders().set('Content-Type', 'application/json')};
   constructor(private http: HttpClient) { }
   betaApi = "https://9dac8vkhn1.execute-api.us-west-2.amazonaws.com/beta";
   submit(ballot: Ballot) {
