@@ -15,6 +15,9 @@ export class BallotComponent implements OnInit {
   eligibleRemasters = eligibleRemasters;
   chosenGames = [];
   chosenRemasters = [];
+  chosenSurprises = [];
+  chosenDisappointments = [];
+  chosenAnticipated = [];
   constructor(private submissionService: SubmissionService) { }
 
   ngOnInit() {
@@ -25,6 +28,9 @@ export class BallotComponent implements OnInit {
     ballot.name = "Ian Barczewski";
     ballot.chosenBestGames = this.chosenGames.map(x => new Choice(x));
     ballot.chosenBestRemasters = this.chosenRemasters.map(x => new Choice(x));
+    ballot.chosenBiggestDisappointments = this.chosenRemasters.map(x => new Choice(x));
+    ballot.chosenBiggestSurprises = this.chosenRemasters.map(x => new Choice(x));
+    ballot.chosenMostAnticipated = this.chosenRemasters.map(x => new Choice(x));
     this.submissionService.submit(ballot).subscribe(foo => {
       console.log(foo);
     });

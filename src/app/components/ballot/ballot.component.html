@@ -6,12 +6,12 @@
 
   <div class="ballot-box">
     <h1 class="ballot-header" id="disappointing-form">Biggest Disappointment</h1>
-    <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
+    <app-bestgame [games]="eligibleGames" [choices]="chosenDisappointments"></app-bestgame>
   </div>
 
   <div class="ballot-box">
     <h1 class="ballot-header">Biggest Surprise</h1>
-    <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
+    <app-bestgame [games]="eligibleGames" [choices]="chosenSurprises"></app-bestgame>
   </div>
 
   <div class="ballot-box">
@@ -21,7 +21,7 @@
 
   <div class="ballot-box">
     <h1 class="ballot-header">Most Anticipated</h1>
-    <app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
+    <app-bestgame [games]="eligibleRemasters" [choices]="chosenAnticipated"></app-bestgame>
   </div>
 </div>
 
