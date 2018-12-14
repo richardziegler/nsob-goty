@@ -1,5 +1,12 @@
 <div class="ballot-container">
   <div class="ballot-box">
+      <h1 class="ballot-header">Enter Your Name</h1>
+      <mat-form-field>
+          <input class="name-form" type="text" matInput placeholder="Your Name" required>
+        </mat-form-field>
+  </div>
+
+  <div class="ballot-box">
     <h1 class="ballot-header">Best Game</h1>
     <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
   </div>
@@ -21,7 +28,9 @@
 
   <div class="ballot-box">
     <h1 class="ballot-header">Most Anticipated</h1>
-    <app-bestgame [games]="eligibleRemasters" [choices]="chosenAnticipated"></app-bestgame>
+    <mat-form-field>
+        <input class="anticipated-form" type="text" matInput placeholder="2019 Game">
+      </mat-form-field>
   </div>
 </div>
 

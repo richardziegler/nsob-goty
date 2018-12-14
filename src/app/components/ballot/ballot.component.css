@@ -1,7 +1,7 @@
 ::ng-deep .mat-raised-button {
     min-height: 250px !important;
-    width:60% !important;
-    font-size:280px !important;
+    width: 60% !important;
+    font-size: 280px !important;
     background-color: fuchsia !important;
     color: white;
     align-content: center;
@@ -9,65 +9,72 @@
 
 .ballot-container {
     width: 50%;
-    display:grid;
+    display: grid;
     grid-row: auto auto;
     grid-template-columns: 100% 100%;
     grid-row-gap: 20px;
     justify-items: center;
-  }
+}
 
 .ballot-box {
-    border-radius:10px;
-    display:grid;
+    border-radius: 10px;
+    display: grid;
     width: 100%;
-  }
+}
 
-  .ballot-header {
+.ballot-header {
     font-size: 150%;
     display: grid;
     margin-right: 10px;
 }
 
-app-bestgame[_ngcontent-c1] {
+.mat-form-field {
     width: 60%;
-    /* justify-content: left; */
 }
 
-  
-  @media (max-width: 812px) { 
-    .ballot-container {
-        display: grid;
-        grid-template-columns: 100%;
-        width: 100%;
-        grid-row-gap: 0px;
-        }
+app-bestgame[_ngcontent-c1] {
+    width: 60%;
+}
 
-      .ballot-header {
-          font-size: 110%;
-          display: flex;
-          width: 100%;
-      }
+
+@media (max-width: 812px) {
+    .ballot-container {
+    display: grid;
+    grid-template-columns: 100%;
+    width: 100%;
+    grid-row-gap: 0px;
+    }
+
+    .ballot-header {
+    font-size: 110%;
+    display: flex;
+    width: 100%;
+    }
+
+    .mat-form-field {
+    width: 68%;
+    }
 
     app-bestgame[_ngcontent-c1] {
-        width: 80%;
+    width: 80%;
     }
 
-      .ballot-box {
-          display: grid;
-        grid-template-columns: 100%;
-      }
-
-      ::ng-deep .mat-raised-button {
-        min-height: 200px !important;
-        width:60% !important;
-        font-size:60px !important;
-        background-color: fuchsia !important;
-        color: white;
-        align-content: center;
+    .ballot-box {
+    display: grid;
+    grid-template-columns: 100%;
     }
 
-    app-bestgame {
-        size: 50%;
+    ::ng-deep .mat-raised-button {
+    min-height: 200px !important;
+    width: 60% !important;
+    font-size: 60px !important;
+    background-color: fuchsia !important;
+    color: white;
+    align-content: center;
     }
+
+    /* app-bestgame {
+    size: 50%;
+    } */
 
 }
