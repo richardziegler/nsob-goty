@@ -6,5 +6,5 @@ export class Ballot {
     chosenBestRemasters: Choice[];
     chosenBiggestDisappointments: Choice[];
     chosenBiggestSurprises: Choice[];
-    chosenMostAnticipated: Choice[];
+    chosenMostAnticipated: string;
 }

@@ -2,7 +2,7 @@
   <div class="ballot-box">
       <h1 class="ballot-header">Enter Your Name</h1>
       <mat-form-field>
-          <input class="name-form" type="text" matInput placeholder="Your Name" required>
+          <input class="name-form" [(ngModel)]="usersName" type="text" matInput placeholder="Your Name" required>
         </mat-form-field>
   </div>
 
@@ -29,7 +29,7 @@
   <div class="ballot-box">
     <h1 class="ballot-header">Most Anticipated</h1>
     <mat-form-field>
-        <input class="anticipated-form" type="text" matInput placeholder="2019 Game">
+        <input class="anticipated-form" [(ngModel)]="anticipatedChoice" type="text" matInput placeholder="2019 Game">
       </mat-form-field>
   </div>
 </div>

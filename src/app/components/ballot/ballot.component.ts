@@ -11,6 +11,8 @@ import { Choice } from 'src/app/models/choice';
 })
 export class BallotComponent implements OnInit {
 
+  usersName = '';
+  anticipatedChoice = '';
   eligibleGames = eligibleGames;
   eligibleRemasters = eligibleRemasters;
   chosenGames = [];
@@ -25,15 +27,17 @@ export class BallotComponent implements OnInit {
 
   submit() {
     var ballot = new Ballot();
-    ballot.name = "Ian Barczewski";
+    ballot.name = this.usersName;
     ballot.chosenBestGames = this.chosenGames.map(x => new Choice(x));
     ballot.chosenBestRemasters = this.chosenRemasters.map(x => new Choice(x));
     ballot.chosenBiggestDisappointments = this.chosenRemasters.map(x => new Choice(x));
     ballot.chosenBiggestSurprises = this.chosenRemasters.map(x => new Choice(x));
-    ballot.chosenMostAnticipated = this.chosenRemasters.map(x => new Choice(x));
+    ballot.chosenMostAnticipated = this.anticipatedChoice;
     this.submissionService.submit(ballot).subscribe(foo => {
       console.log(foo);
     });
+    console.log(ballot.name);
+    console.log(ballot.chosenMostAnticipated);
   }
 
 }
