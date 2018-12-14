@@ -1,3 +1,24 @@
 h1 {
     font-size: 200%;
 }
+
+.first-kirby {
+    width: 70px;
+    height: auto;
+}
+
+.second-kirby {
+    width: 70px;
+    height: auto;
+}
+
+@media (max-width: 812px) {
+    .first-kirby {
+        display: none;
+    }
+
+    .second-kirby {
+        width: 40px;
+        height: auto;
+    }
+}
