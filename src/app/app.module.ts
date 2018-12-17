@@ -8,15 +8,20 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule, MatButtonModule } from '@angular/material';
+import {MatTableModule} from '@angular/material/table';
+
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BallotComponent } from './components/ballot/ballot.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ResultsComponent } from './components/results/results.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     BestgameComponent,
-    BallotComponent
+    BallotComponent,
+    ResultsComponent
   ],
   exports:[
     MatAutocompleteModule,
@@ -33,6 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     DragDropModule,
     MatButtonModule,
     HttpClientModule,
+    AppRoutingModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
