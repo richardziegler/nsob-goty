@@ -28,11 +28,11 @@ export class BallotComponent implements OnInit {
   submit() {
     var ballot = new Ballot();
     ballot.name = this.usersName;
-    ballot.chosenBestGames = this.chosenGames.map(x => new Choice(x));
-    ballot.chosenBestRemasters = this.chosenRemasters.map(x => new Choice(x));
-    ballot.chosenBiggestDisappointments = this.chosenRemasters.map(x => new Choice(x));
-    ballot.chosenBiggestSurprises = this.chosenRemasters.map(x => new Choice(x));
-    ballot.chosenMostAnticipated = this.anticipatedChoice;
+    ballot.chosenBestGames = this.chosenGames;
+    ballot.chosenBestRemasters = this.chosenRemasters;
+    ballot.chosenBiggestDisappointments = this.chosenDisappointments;
+    ballot.chosenBiggestSurprises = this.chosenSurprises;
+    ballot.chosenMostAnticipated = [this.anticipatedChoice];
     this.submissionService.submit(ballot).subscribe(foo => {
       console.log(foo);
     });
