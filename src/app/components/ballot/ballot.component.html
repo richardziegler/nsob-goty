@@ -1,41 +1,49 @@
-<div class="ballot-container">
-  <div class="ballot-box">
-      <h1 class="ballot-header">Enter Your Name</h1>
+<ng-container *ngIf="submissionState === 0 || submissionState === 1">
+  <div class="ballot-container">
+    <div *ngIf="error !== null">
+      {{error.message}}
+    </div>
+    <div class="ballot-box">
+        <h1 class="ballot-header">Enter Your Name</h1>
+        <mat-form-field>
+            <input class="name-form" [(ngModel)]="name" type="text" matInput placeholder="Your Name" required>
+          </mat-form-field>
+    </div>
+  
+    <div class="ballot-box">
+      <h1 class="ballot-header">Best Game</h1>
+      <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
+    </div>
+  
+    <div class="ballot-box">
+      <h1 class="ballot-header" id="disappointing-form">Biggest Disappointment</h1>
+      <app-bestgame [games]="eligibleGames" [choices]="chosenDisappointments"></app-bestgame>
+    </div>
+  
+    <div class="ballot-box">
+      <h1 class="ballot-header">Biggest Surprise</h1>
+      <app-bestgame [games]="eligibleGames" [choices]="chosenSurprises"></app-bestgame>
+    </div>
+  
+    <div class="ballot-box">
+      <h1 class="ballot-header">Best Remake</h1>
+      <app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
+    </div>
+  
+    <div class="ballot-box">
+      <h1 class="ballot-header">Most Anticipated</h1>
       <mat-form-field>
-          <input class="name-form" [(ngModel)]="usersName" type="text" matInput placeholder="Your Name" required>
+          <input class="anticipated-form" [(ngModel)]="anticipatedChoice" type="text" matInput placeholder="2019 Game">
         </mat-form-field>
+    </div>
   </div>
-
-  <div class="ballot-box">
-    <h1 class="ballot-header">Best Game</h1>
-    <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
+  
+  <br />
+  <div class="buttonz">
+    <button mat-raised-button class="submit-button" (click)="submit()" [disabled]="submissionState === 1 || chosenGames.length === 0 || name === ''">Submit</button>
   </div>
+</ng-container>
 
-  <div class="ballot-box">
-    <h1 class="ballot-header" id="disappointing-form">Biggest Disappointment</h1>
-    <app-bestgame [games]="eligibleGames" [choices]="chosenDisappointments"></app-bestgame>
-  </div>
-
-  <div class="ballot-box">
-    <h1 class="ballot-header">Biggest Surprise</h1>
-    <app-bestgame [games]="eligibleGames" [choices]="chosenSurprises"></app-bestgame>
-  </div>
-
-  <div class="ballot-box">
-    <h1 class="ballot-header">Best Remake</h1>
-    <app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
-  </div>
-
-  <div class="ballot-box">
-    <h1 class="ballot-header">Most Anticipated</h1>
-    <mat-form-field>
-        <input class="anticipated-form" [(ngModel)]="anticipatedChoice" type="text" matInput placeholder="2019 Game">
-      </mat-form-field>
-  </div>
-</div>
-
-
-<br />
-<div class="buttonz">
-  <button mat-raised-button class="submit-button" (click)="submit()">Submit</button>
+<div *ngIf="submissionState === 2">
+  Submitted! Thank you!
 </div>
