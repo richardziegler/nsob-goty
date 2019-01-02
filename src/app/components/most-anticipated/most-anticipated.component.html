@@ -1,0 +1,10 @@
+<mat-form-field>
+  <input type="text" matInput [formControl]="gameControl" (keydown.enter)="onOptionSelected($event)" placeholder="Artifact, Hitman II, Minecraft, etc...">
+</mat-form-field>
+
+<div *ngIf="hasSelectedGame" cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let chosenGame of choices; let i = index" cdkDrag>
+    {{"#" + (i + 1)}} - {{chosenGame}}
+    <button (click)="remove(chosenGame)">X</button>
+  </div>
+</div>

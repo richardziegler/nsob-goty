@@ -29,6 +29,10 @@ export class BallotComponent implements OnInit {
   ngOnInit() {
   }
 
+  addMostAnticipated(event) {
+    console.log(event);
+  }
+
   submit() {
     this.submissionState = SubmissionState.Submitting
     var ballot = new Ballot();
@@ -37,7 +41,7 @@ export class BallotComponent implements OnInit {
     ballot.chosenBestRemasters = this.chosenRemasters;
     ballot.chosenBiggestDisappointments = this.chosenDisappointments;
     ballot.chosenBiggestSurprises = this.chosenSurprises;
-    ballot.chosenMostAnticipated = [this.anticipatedChoice];
+    ballot.chosenMostAnticipated = this.chosenAnticipated;
     this.submissionService.submit(ballot).subscribe(foo => {
       this.submissionState = SubmissionState.Sent;
     }, (err) => {

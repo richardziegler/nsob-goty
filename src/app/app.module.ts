@@ -15,13 +15,15 @@ import { BallotComponent } from './components/ballot/ballot.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResultsComponent } from './components/results/results.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MostAnticipatedComponent } from './components/most-anticipated/most-anticipated.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BestgameComponent,
     BallotComponent,
-    ResultsComponent
+    ResultsComponent,
+    MostAnticipatedComponent
   ],
   exports:[
     MatAutocompleteModule,
