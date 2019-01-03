@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule, MatButtonModule } from '@angular/material';
+import { MatInputModule, MatButtonModule, MatStepperModule, MatCardModule } from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -41,7 +41,9 @@ import { MostAnticipatedComponent } from './components/most-anticipated/most-ant
     MatButtonModule,
     HttpClientModule,
     AppRoutingModule,
-    MatTableModule
+    MatTableModule,
+    MatStepperModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

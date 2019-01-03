@@ -1,9 +1,69 @@
 <ng-container *ngIf="submissionState === 0 || submissionState === 1">
   <div class="ballot-container">
+      <mat-horizontal-stepper linear> 
+        <mat-step [completed]="name.length > 0">
+            <ng-template matStepLabel>Name</ng-template>
+            <mat-card>
+              <mat-form-field>
+                <input class="name-form" [(ngModel)]="name" type="text" matInput placeholder="Your Name" required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext type="button">Next</button>
+              </div>
+            </mat-card>
+        </mat-step>
+
+        <mat-step [completed]="chosenGames.length > 0" >
+            <ng-template matStepLabel>Best Game</ng-template>
+            <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
+            <div>
+              <button mat-button matStepperPrevious type="button">Back</button>
+              <button mat-button matStepperNext type="button">Next</button>
+            </div>
+        </mat-step>
+
+        <mat-step>
+            <ng-template matStepLabel>Biggest Disappointment</ng-template>
+            <app-bestgame [games]="eligibleGames" [choices]="chosenDisappointments"></app-bestgame>
+            <div>
+              <button mat-button matStepperPrevious type="button">Back</button>
+              <button mat-button matStepperNext type="button">Next</button>
+            </div>
+        </mat-step>
+
+        <mat-step>
+            <ng-template matStepLabel>Biggest Surprise</ng-template>
+            <app-bestgame [games]="eligibleGames" [choices]="chosenSurprises"></app-bestgame>
+            <div>
+              <button mat-button matStepperPrevious type="button">Back</button>
+              <button mat-button matStepperNext type="button">Next</button>
+            </div>
+        </mat-step>
+
+        <mat-step>
+            <ng-template matStepLabel>Best Remakes/Remasters</ng-template>
+            <app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
+            <div>
+              <button mat-button matStepperPrevious type="button">Back</button>
+              <button mat-button matStepperNext type="button">Next</button>
+            </div>
+        </mat-step>
+
+        <mat-step>
+            <ng-template matStepLabel>Most Anticipated</ng-template>
+            <app-most-anticipated [choices]="chosenAnticipated"></app-most-anticipated>
+            <div>
+              <button mat-button matStepperPrevious type="button">Back</button>
+              <button mat-button matStepperNext type="button">Next</button>
+            </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    
+    
     <div *ngIf="error !== null">
       {{error.message}}
     </div>
-    <div class="ballot-box">
+    <!-- <div class="ballot-box">
         <h1 class="ballot-header">Enter Your Name</h1>
         <mat-form-field>
           <input class="name-form" [(ngModel)]="name" type="text" matInput placeholder="Your Name" required>
@@ -33,7 +93,7 @@
     <div class="ballot-box">
       <h1 class="ballot-header">Most Anticipated</h1>
       <app-most-anticipated [choices]="chosenAnticipated"></app-most-anticipated>
-    </div>
+    </div> -->
   </div>
   
   <br />

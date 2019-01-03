@@ -8,8 +8,8 @@
 }
 
 .ballot-container {
-    width: 50%;
-    display: grid;
+    /* width: 50%; */
+    /* display: grid; */
     grid-row: auto auto;
     grid-template-columns: 100% 100%;
     grid-row-gap: 20px;
@@ -34,6 +34,18 @@
 
 app-bestgame[_ngcontent-c1] {
     width: 60%;
+}
+
+mat-horizontal-stepper {
+    background-color: rgb(240, 240, 240) !important;
+}
+
+mat-horizontal-stepper > div {
+    background-color: rgb(220, 220, 220) !important;
+}
+
+mat-card {
+    margin-top: 1.5em;
 }
 
 
