@@ -247,6 +247,7 @@ var eligibleRemasters = [
 "Spyro Reignited Trilogy",
 "Street Fighter 30th Anniversary Collection",
 "Sunset Overdrive",
+"The World Ends With You: Final Remix",
 "Valkyria Chronicles",
 "Warframe",
 "Zwei: The Arges Adventure",
