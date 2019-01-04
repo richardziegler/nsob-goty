@@ -59,11 +59,16 @@ mat-horizontal-stepper > div {
     background-color: rgb(220, 220, 220) !important;
 }
 
+::ng-deep .mat-horizontal-stepper-content {
+    display: flex !important;
+    justify-content: center !important;
+}
+
 mat-card {
     /* margin-top: 1.5em; */
     background-color: rgb(241, 241, 241) !important;
-    width: 35%;
-    height: 460px; 
+    width:35%;
+    height: 90%; 
 }
 
 .summary-wrapper {
@@ -94,6 +99,12 @@ app-ballot-summary {
 }
 
 @media (max-width: 812px) {
+    mat-card {
+        /* margin-top: 1.5em; */
+        background-color: rgb(241, 241, 241) !important;
+        width:90%;
+        height: 90%; 
+    }
     /* .ballot-container {
         display: grid;
         grid-template-columns: 100%;
