@@ -70,6 +70,10 @@ app-ballot-summary {
     margin-top: 1em;
 }
 
+.name-field {
+    width: 35%;
+}
+
 @media (max-width: 812px) {
     .ballot-container {
         display: grid;
