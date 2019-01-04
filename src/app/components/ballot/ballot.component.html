@@ -2,7 +2,7 @@
   <div class="ballot-container">
       <mat-horizontal-stepper linear class="mat-stepper"> 
         <mat-step [completed]="name.length > 0">
-            <ng-template matStepLabel>Name</ng-template>
+            <ng-template matStepLabel>Name</ng-template>  
             <mat-card>
               <div class="label">Name</div>
               <mat-form-field class="name-field">
@@ -15,13 +15,12 @@
         </mat-step>
 
         <mat-step [completed]="chosenGames.length > 0" >
-            <ng-template matStepLabel>Best Game</ng-template>
-            <mat-card>
+          <mat-card>
             <ng-template matStepLabel>Best Games</ng-template>
             <div class="label">Best Game</div>
             <div class="description">What were your favorite games of the year? Enter a game and select it from the autocompleting list to select it. Drag and drop entries to sort them in the list.</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
-            <div>
+            <div class="navigation">
               <button mat-button matStepperPrevious type="button">Back</button>
               <button mat-button matStepperNext type="button">Next</button>
             </div>
@@ -29,14 +28,12 @@
         </mat-step>
 
         <mat-step>
-            <ng-template matStepLabel>Biggest Disappointment</ng-template>
             <mat-card>
-            <div class="label">Biggest Disappointment</div>
             <ng-template matStepLabel>Disappointments</ng-template>
             <div class="label">Biggest Disappointment (optional)</div>
             <div class="description">What games disappointed you the most? Enter a game and select it from the autocompleting list to select it. Drag and drop entries to sort them in the list.</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenDisappointments"></app-bestgame>
-            <div>
+            <div class="navigation">
               <button mat-button matStepperPrevious type="button">Back</button>
               <button mat-button matStepperNext type="button">Next</button>
             </div>
@@ -44,14 +41,12 @@
         </mat-step>
 
         <mat-step>
-            <ng-template matStepLabel>Biggest Surprise</ng-template>
           <mat-card>
-            <div class="label">Biggest Surprise</div>
             <ng-template matStepLabel>Surprises</ng-template>
             <div class="label">Biggest Surprise (optional)</div>
             <div class="description">What games caught you by surprise the most? Enter a game and select it from the autocompleting list to select it. Drag and drop entries to sort them in the list.</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenSurprises"></app-bestgame>
-            <div>
+            <div class="navigation">
               <button mat-button matStepperPrevious type="button">Back</button>
               <button mat-button matStepperNext type="button">Next</button>
             </div>
@@ -59,14 +54,12 @@
         </mat-step>
 
         <mat-step>
-            <ng-template matStepLabel>Best Remakes/Remasters</ng-template>
           <mat-card>
-            <div class="label">Best Remakes/Remasters</div>
             <ng-template matStepLabel>Remakes/Remasters</ng-template>
             <div class="label">Best Remakes/Remasters (optional)</div>
             <div class="description">What were your favorite remakes and remasters? Enter a game and select it from the autocompleting list to select it. Drag and drop entries to sort them in the list.</div>
             <app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
-            <div>
+            <div class="navigation">
               <button mat-button matStepperPrevious type="button">Back</button>
               <button mat-button matStepperNext type="button">Next</button>
             </div>
@@ -74,14 +67,12 @@
         </mat-step>
 
         <mat-step>
-            <ng-template matStepLabel>Most Anticipated</ng-template>
           <mat-card>
-            <div class="label">Most Anticipated</div>
             <ng-template matStepLabel>Anticipated</ng-template>
             <div class="label">Most Anticipated (optional)</div>
             <div class="description">What were your favorite games of the year? HEY. THIS FIELD IS DIFFERENT. Enter a game and PRESS ENTER to add it to the list. Drag and drop entries to sort them in the list.</div>
             <app-most-anticipated [choices]="chosenAnticipated"></app-most-anticipated>
-            <div>
+            <div class="navigation">
               <button mat-button matStepperPrevious type="button">Back</button>
               <button mat-button matStepperNext type="button">Next</button>
             </div>

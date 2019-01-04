@@ -38,6 +38,7 @@
 
 .label {
     font-size: 1.5em;
+    text-align: center;
 }
 
 app-bestgame[_ngcontent-c1] {
@@ -78,6 +79,11 @@ app-ballot-summary {
 
 .name-field {
     width: 35%;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media (max-width: 812px) {
