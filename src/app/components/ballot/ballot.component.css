@@ -9,11 +9,15 @@
 
 .ballot-container {
     /* width: 50%; */
-    /* display: grid; */
+    display: grid;
     grid-row: auto auto;
     grid-template-columns: 100% 100%;
     grid-row-gap: 20px;
     justify-items: center;
+}
+
+.mat-stepper {
+    width: 90%;
 }
 
 .ballot-box {
@@ -29,7 +33,7 @@
 }
 
 .mat-form-field {
-    width: 107%;
+    width: 40%;
 }
 
 .label {
@@ -42,6 +46,7 @@ app-bestgame[_ngcontent-c1] {
 
 mat-horizontal-stepper {
     background-color: rgb(240, 240, 240) !important;
+    visibility: hidden !important;
 }
 
 mat-horizontal-stepper > div {
@@ -50,6 +55,7 @@ mat-horizontal-stepper > div {
 
 mat-card {
     margin-top: 1.5em;
+    background-color: rgb(221, 221, 221) !important;
 }
 
 

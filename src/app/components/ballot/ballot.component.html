@@ -1,6 +1,6 @@
 <ng-container *ngIf="submissionState === 0 || submissionState === 1">
   <div class="ballot-container">
-      <mat-horizontal-stepper linear> 
+      <mat-horizontal-stepper linear class="mat-stepper"> 
         <mat-step [completed]="name.length > 0">
             <ng-template matStepLabel>Name</ng-template>
             <mat-card>
@@ -16,52 +16,62 @@
 
         <mat-step [completed]="chosenGames.length > 0" >
             <ng-template matStepLabel>Best Game</ng-template>
+            <mat-card>
             <div class="label">Best Game</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
             <div>
               <button mat-button matStepperPrevious type="button">Back</button>
               <button mat-button matStepperNext type="button">Next</button>
             </div>
+          </mat-card>
         </mat-step>
 
         <mat-step>
             <ng-template matStepLabel>Biggest Disappointment</ng-template>
+            <mat-card>
             <div class="label">Biggest Disappointment</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenDisappointments"></app-bestgame>
             <div>
               <button mat-button matStepperPrevious type="button">Back</button>
               <button mat-button matStepperNext type="button">Next</button>
             </div>
+          </mat-card>
         </mat-step>
 
         <mat-step>
             <ng-template matStepLabel>Biggest Surprise</ng-template>
+          <mat-card>
             <div class="label">Biggest Surprise</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenSurprises"></app-bestgame>
             <div>
               <button mat-button matStepperPrevious type="button">Back</button>
               <button mat-button matStepperNext type="button">Next</button>
             </div>
+          </mat-card>
         </mat-step>
 
         <mat-step>
             <ng-template matStepLabel>Best Remakes/Remasters</ng-template>
+          <mat-card>
             <div class="label">Best Remakes/Remasters</div>
             <app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
             <div>
               <button mat-button matStepperPrevious type="button">Back</button>
               <button mat-button matStepperNext type="button">Next</button>
             </div>
+          </mat-card>
         </mat-step>
 
         <mat-step>
             <ng-template matStepLabel>Most Anticipated</ng-template>
+          <mat-card>
             <div class="label">Most Anticipated</div>
             <app-most-anticipated [choices]="chosenAnticipated"></app-most-anticipated>
             <div>
               <button mat-button matStepperPrevious type="button">Back</button>
               <button mat-button matStepperNext type="button">Next</button>
             </div>
+          </mat-card>
         </mat-step>
         <mat-step>
           <ng-template matStepLabel>Review</ng-template>
