@@ -13,7 +13,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./ballot.component.css']
 })
 export class BallotComponent implements OnInit {
-  
+
   submissionState = SubmissionState.Waiting;
   error = null;
   name = '';
@@ -39,7 +39,7 @@ export class BallotComponent implements OnInit {
   }
 
   submit() {
-    this.submissionState = SubmissionState.Submitting
+    this.submissionState = SubmissionState.Submitting;
     var ballot = new Ballot();
     ballot.name = this.name;
     ballot.chosenBestGames = this.chosenGames;
