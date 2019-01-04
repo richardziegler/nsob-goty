@@ -1,11 +1,11 @@
-::ng-deep .mat-raised-button {
+/* ::ng-deep .mat-raised-button {
     min-height: 250px !important;
     width: 60% !important;
     font-size: 280px !important;
     background-color: fuchsia !important;
     color: white;
     align-content: center;
-}
+} */
 
 .ballot-container {
     /* width: 50%; */
@@ -30,6 +30,10 @@
 
 .mat-form-field {
     width: 107%;
+}
+
+.label {
+    font-size: 1.5em;
 }
 
 app-bestgame[_ngcontent-c1] {

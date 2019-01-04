@@ -4,6 +4,7 @@
         <mat-step [completed]="name.length > 0">
             <ng-template matStepLabel>Name</ng-template>
             <mat-card>
+              <div class="label">Name</div>
               <mat-form-field>
                 <input class="name-form" [(ngModel)]="name" type="text" matInput placeholder="Your Name" required>
               </mat-form-field>
@@ -15,6 +16,7 @@
 
         <mat-step [completed]="chosenGames.length > 0" >
             <ng-template matStepLabel>Best Game</ng-template>
+            <div class="label">Best Game</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
             <div>
               <button mat-button matStepperPrevious type="button">Back</button>
@@ -24,6 +26,7 @@
 
         <mat-step>
             <ng-template matStepLabel>Biggest Disappointment</ng-template>
+            <div class="label">Biggest Disappointment</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenDisappointments"></app-bestgame>
             <div>
               <button mat-button matStepperPrevious type="button">Back</button>
@@ -33,6 +36,7 @@
 
         <mat-step>
             <ng-template matStepLabel>Biggest Surprise</ng-template>
+            <div class="label">Biggest Surprise</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenSurprises"></app-bestgame>
             <div>
               <button mat-button matStepperPrevious type="button">Back</button>
@@ -42,6 +46,7 @@
 
         <mat-step>
             <ng-template matStepLabel>Best Remakes/Remasters</ng-template>
+            <div class="label">Best Remakes/Remasters</div>
             <app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
             <div>
               <button mat-button matStepperPrevious type="button">Back</button>
@@ -51,11 +56,16 @@
 
         <mat-step>
             <ng-template matStepLabel>Most Anticipated</ng-template>
+            <div class="label">Most Anticipated</div>
             <app-most-anticipated [choices]="chosenAnticipated"></app-most-anticipated>
             <div>
               <button mat-button matStepperPrevious type="button">Back</button>
               <button mat-button matStepperNext type="button">Next</button>
             </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Review</ng-template>
+          <button mat-raised-button (click)="submit()" [disabled]="submissionState === 1">Submit</button>
         </mat-step>
       </mat-horizontal-stepper>
     
@@ -94,11 +104,6 @@
       <h1 class="ballot-header">Most Anticipated</h1>
       <app-most-anticipated [choices]="chosenAnticipated"></app-most-anticipated>
     </div> -->
-  </div>
-  
-  <br />
-  <div class="buttonz">
-    <button mat-raised-button class="submit-button" (click)="submit()" [disabled]="submissionState === 1 || chosenGames.length === 0 || name === ''">Submit</button>
   </div>
 </ng-container>
 
