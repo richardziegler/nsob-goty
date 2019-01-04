@@ -4,11 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BestgameComponent } from './components/bestgame/bestgame.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule, MatButtonModule, MatStepperModule, MatCardModule } from '@angular/material';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list'
 
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BallotComponent } from './components/ballot/ballot.component';
@@ -17,13 +18,16 @@ import { ResultsComponent } from './components/results/results.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MostAnticipatedComponent } from './components/most-anticipated/most-anticipated.component';
 
+import { BallotSummaryComponent } from './components/ballot-summary/ballot-summary.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     BestgameComponent,
     BallotComponent,
     ResultsComponent,
-    MostAnticipatedComponent
+    MostAnticipatedComponent,
+    BallotSummaryComponent
   ],
   exports:[
     MatAutocompleteModule,
@@ -44,6 +48,7 @@ import { MostAnticipatedComponent } from './components/most-anticipated/most-ant
     MatTableModule,
     MatStepperModule,
     MatCardModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

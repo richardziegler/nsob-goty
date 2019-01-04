@@ -15,7 +15,7 @@
         </mat-step>
 
         <mat-step [completed]="chosenGames.length > 0" >
-            <ng-template matStepLabel>Best Game</ng-template>
+            <ng-template matStepLabel>Best Games</ng-template>
             <div class="label">Best Game</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
             <div>
@@ -25,7 +25,7 @@
         </mat-step>
 
         <mat-step>
-            <ng-template matStepLabel>Biggest Disappointment</ng-template>
+            <ng-template matStepLabel>Disappointments</ng-template>
             <div class="label">Biggest Disappointment</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenDisappointments"></app-bestgame>
             <div>
@@ -35,7 +35,7 @@
         </mat-step>
 
         <mat-step>
-            <ng-template matStepLabel>Biggest Surprise</ng-template>
+            <ng-template matStepLabel>Surprises</ng-template>
             <div class="label">Biggest Surprise</div>
             <app-bestgame [games]="eligibleGames" [choices]="chosenSurprises"></app-bestgame>
             <div>
@@ -45,7 +45,7 @@
         </mat-step>
 
         <mat-step>
-            <ng-template matStepLabel>Best Remakes/Remasters</ng-template>
+            <ng-template matStepLabel>Remakes/Remasters</ng-template>
             <div class="label">Best Remakes/Remasters</div>
             <app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
             <div>
@@ -55,7 +55,7 @@
         </mat-step>
 
         <mat-step>
-            <ng-template matStepLabel>Most Anticipated</ng-template>
+            <ng-template matStepLabel>Anticipated</ng-template>
             <div class="label">Most Anticipated</div>
             <app-most-anticipated [choices]="chosenAnticipated"></app-most-anticipated>
             <div>
@@ -65,6 +65,14 @@
         </mat-step>
         <mat-step>
           <ng-template matStepLabel>Review</ng-template>
+          <div class="label">Review</div>
+          <div class="summary-wrapper">
+            <app-ballot-summary [games]="chosenGames" [category]="'Best Game'"></app-ballot-summary>
+            <app-ballot-summary [games]="chosenDisappointments" [category]="'Biggest Disappointment'"></app-ballot-summary>
+            <app-ballot-summary [games]="chosenSurprises" [category]="'Best Surprise'"></app-ballot-summary>
+            <app-ballot-summary [games]="chosenRemasters" [category]="'Best Remake/Remasters'"></app-ballot-summary>
+            <app-ballot-summary [games]="chosenAnticipated" [category]="'Most Anticipated'"></app-ballot-summary>    
+          </div>
           <button mat-raised-button (click)="submit()" [disabled]="submissionState === 1">Submit</button>
         </mat-step>
       </mat-horizontal-stepper>
@@ -73,37 +81,6 @@
     <div *ngIf="error !== null">
       {{error.message}}
     </div>
-    <!-- <div class="ballot-box">
-        <h1 class="ballot-header">Enter Your Name</h1>
-        <mat-form-field>
-          <input class="name-form" [(ngModel)]="name" type="text" matInput placeholder="Your Name" required>
-        </mat-form-field>
-    </div>
-  
-    <div class="ballot-box">
-      <h1 class="ballot-header">Best Game</h1>
-      <app-bestgame [games]="eligibleGames" [choices]="chosenGames"></app-bestgame>
-    </div>
-  
-    <div class="ballot-box">
-      <h1 class="ballot-header" id="disappointing-form">Biggest Disappointment</h1>
-      <app-bestgame [games]="eligibleGames" [choices]="chosenDisappointments"></app-bestgame>
-    </div>
-  
-    <div class="ballot-box">
-      <h1 class="ballot-header">Biggest Surprise</h1>
-      <app-bestgame [games]="eligibleGames" [choices]="chosenSurprises"></app-bestgame>
-    </div>
-  
-    <div class="ballot-box">
-      <h1 class="ballot-header">Best Remake</h1>
-      <app-bestgame [games]="eligibleRemasters" [choices]="chosenRemasters"></app-bestgame>
-    </div>
-  
-    <div class="ballot-box">
-      <h1 class="ballot-header">Most Anticipated</h1>
-      <app-most-anticipated [choices]="chosenAnticipated"></app-most-anticipated>
-    </div> -->
   </div>
 </ng-container>
 

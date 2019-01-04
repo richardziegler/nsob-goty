@@ -1,0 +1,8 @@
+mat-list-item {
+    height: 24px !important;
+    font-style: italic;
+}
+
+.category {
+    font-weight: bold;
+}

@@ -52,6 +52,17 @@ mat-card {
     margin-top: 1.5em;
 }
 
+.summary-wrapper {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+app-ballot-summary {
+    margin-top: 12px;
+}
 
 @media (max-width: 812px) {
     .ballot-container {
@@ -82,12 +93,12 @@ mat-card {
     }
 
     ::ng-deep .mat-raised-button {
-    min-height: 200px !important;
-    width: 60% !important;
-    font-size: 60px !important;
-    background-color: fuchsia !important;
-    color: white;
-    align-content: center;
+    /* min-height: 200px !important; */
+    /* width: 60% !important; */
+    /* font-size: 60px !important; */
+    /* background-color: fuchsia !important; */
+    /* color: white; */
+    /* align-content: center; */
     }
 
     /* app-bestgame {
