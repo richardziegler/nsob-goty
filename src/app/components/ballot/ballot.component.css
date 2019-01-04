@@ -8,12 +8,17 @@
 } */
 
 .ballot-container {
-    /* width: 50%; */
-    display: grid;
-    grid-row: auto auto;
-    grid-template-columns: 100% 100%;
+    /* display: grid;
+    grid-row: auto;
+    grid-template-columns:100%;
     grid-row-gap: 20px;
-    justify-items: center;
+    justify-items: center; */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -3em;
+    margin-bottom: -3em;
 }
 
 .mat-stepper {
@@ -33,7 +38,7 @@
 }
 
 .mat-form-field {
-    width: 40%;
+    width: 60%;
 }
 
 .label {
@@ -55,8 +60,10 @@ mat-horizontal-stepper > div {
 }
 
 mat-card {
-    margin-top: 1.5em;
-    background-color: rgb(221, 221, 221) !important;
+    /* margin-top: 1.5em; */
+    background-color: rgb(241, 241, 241) !important;
+    width: 35%;
+    height: 460px; 
 }
 
 .summary-wrapper {
