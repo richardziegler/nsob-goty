@@ -1,8 +1,10 @@
 mat-list-item {
     height: 24px !important;
     font-style: italic;
+    text-align: center;
 }
 
 .category {
     font-weight: bold;
+    text-align: center;
 }
