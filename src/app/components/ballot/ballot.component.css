@@ -1,19 +1,28 @@
-::ng-deep .mat-raised-button {
+/* ::ng-deep .mat-raised-button {
     min-height: 250px !important;
     width: 60% !important;
     font-size: 280px !important;
     background-color: fuchsia !important;
     color: white;
     align-content: center;
-}
+} */
 
 .ballot-container {
-    width: 50%;
-    display: grid;
-    grid-row: auto auto;
-    grid-template-columns: 100% 100%;
+    /* display: grid;
+    grid-row: auto;
+    grid-template-columns:100%;
     grid-row-gap: 20px;
-    justify-items: center;
+    justify-items: center; */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -3em;
+    margin-bottom: -3em;
+}
+
+.mat-stepper {
+    width: 90%;
 }
 
 .ballot-box {
@@ -29,49 +38,107 @@
 }
 
 .mat-form-field {
-    width: 107%;
+    width: 60%;
+}
+
+.label {
+    font-size: 1.5em;
+    text-align: center;
 }
 
 app-bestgame[_ngcontent-c1] {
     width: 60%;
 }
 
+mat-horizontal-stepper {
+    background-color: rgb(240, 240, 240) !important;
+    visibility: hidden !important;
+}
+
+mat-horizontal-stepper > div {
+    background-color: rgb(220, 220, 220) !important;
+}
+
+::ng-deep .mat-horizontal-stepper-content {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+mat-card {
+    /* margin-top: 1.5em; */
+    background-color: rgb(241, 241, 241) !important;
+    width:35%;
+    height: 90%; 
+}
+
+.summary-wrapper {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+app-ballot-summary {
+    margin-top: 12px;
+}
+
+.description {
+    font-style: italic;
+    font-size: .75em;
+    margin-top: 1em;
+}
+
+.name-field {
+    width: 65%;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
 
 @media (max-width: 812px) {
-    .ballot-container {
-    display: grid;
-    grid-template-columns: 100%;
-    width: 100%;
-    grid-row-gap: 0px;
+    mat-card {
+        /* margin-top: 1.5em; */
+        background-color: rgb(241, 241, 241) !important;
+        width:90%;
+        height: 90%; 
+    }
+    /* .ballot-container {
+        display: grid;
+        grid-template-columns: 100%;
+        width: 100%;
+        grid-row-gap: 0px;
     }
 
     .ballot-header {
-    font-size: 110%;
-    display: flex;
-    width: 100%;
+        font-size: 110%;
+        display: flex;
+        width: 100%;
     }
 
     .mat-form-field {
-    width: 80%;
+        width: 80%;
     }
 
     app-bestgame[_ngcontent-c1] {
-    width: 80%;
+        width: 80%;
     }
 
     .ballot-box {
-    display: grid;
-    grid-template-columns: 100%;
-    width: 100%;
-    }
+        display: grid;
+        grid-template-columns: 100%;
+        width: 100%;
+    } */
 
     ::ng-deep .mat-raised-button {
-    min-height: 200px !important;
-    width: 60% !important;
-    font-size: 60px !important;
-    background-color: fuchsia !important;
-    color: white;
-    align-content: center;
+    /* min-height: 200px !important; */
+    /* width: 60% !important; */
+    /* font-size: 60px !important; */
+    /* background-color: fuchsia !important; */
+    /* color: white; */
+    /* align-content: center; */
     }
 
     /* app-bestgame {

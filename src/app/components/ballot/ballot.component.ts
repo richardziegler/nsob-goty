@@ -5,6 +5,7 @@ import { Ballot } from 'src/app/models/ballot';
 import { Choice } from 'src/app/models/choice';
 import { SubmissionState } from 'src/app/models/submissionState';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-ballot',
@@ -12,7 +13,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./ballot.component.css']
 })
 export class BallotComponent implements OnInit {
-  
+
   submissionState = SubmissionState.Waiting;
   error = null;
   name = '';
@@ -24,9 +25,13 @@ export class BallotComponent implements OnInit {
   chosenSurprises = [];
   chosenDisappointments = [];
   chosenAnticipated = [];
-  constructor(private submissionService: SubmissionService) { }
+  nameForm: FormGroup;
+  constructor(private submissionService: SubmissionService, private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.nameForm = this._formBuilder.group({
+      name: ['', Validators.required]
+    });
   }
 
   addMostAnticipated(event) {
@@ -34,7 +39,7 @@ export class BallotComponent implements OnInit {
   }
 
   submit() {
-    this.submissionState = SubmissionState.Submitting
+    this.submissionState = SubmissionState.Submitting;
     var ballot = new Ballot();
     ballot.name = this.name;
     ballot.chosenBestGames = this.chosenGames;

@@ -12,6 +12,7 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 export class BestgameComponent implements OnInit {
   @Input() games: string[];
   @Input() choices: string[];
+  @Input() placeholder: string;
 
   gameControl = new FormControl('');
   filteredGames: Observable<string[]>;

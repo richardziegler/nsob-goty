@@ -8,7 +8,7 @@
 </mat-autocomplete>
 
 
-<div *ngIf="hasSelectedGame" cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+<div *ngIf="hasSelectedGame" cdkDropList class="selection-list" (cdkDropListDropped)="drop($event)">
   <div class="example-box" *ngFor="let chosenGame of choices; let i = index" cdkDrag>
     {{"#" + (i + 1)}} - {{chosenGame}}
     <button (click)="remove(chosenGame)">X</button>
