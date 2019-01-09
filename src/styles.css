@@ -2,10 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Muli');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
 
 html {
     /* font-family: 'Indie Flower', cursive; */
-    font-family: 'Muli', sans-serif;
+    /* font-family: 'Muli', sans-serif; */
+    font-family: 'Bungee Shade', cursive;
     /* color: palegreen; */
     background-color: lightslategrey;
     
@@ -15,6 +17,9 @@ body {
     padding: 10px;
 }
 
+.heading {
+    font-size: 130%;
+}
 /* html::before {
     background-image: url(/src/app/assets/bg-small.jpg);
     background-repeat: repeat;
@@ -33,4 +38,10 @@ body {
 .buttonz {
     display: flex;
     justify-content: center;
+}
+
+@media (max-width: 812px) {
+    .heading {
+        font-size: 80%;
+    }
 }

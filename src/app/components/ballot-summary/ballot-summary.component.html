@@ -1,6 +1,8 @@
-<div class="category">{{category}}</div>
+<div matLine class="category">{{category}}</div>
 <mat-list dense>
+    <div class="summary-list-margin">
   <mat-list-item matLine *ngFor="let game of games; let i = index;">
     {{i + 1}}. {{game}}
   </mat-list-item>
+</div>
 </mat-list>

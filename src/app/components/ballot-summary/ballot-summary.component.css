@@ -8,3 +8,7 @@ mat-list-item {
     font-weight: bold;
     text-align: center;
 }
+
+.summary-list-margin {
+    margin-bottom: 10px;
+}
