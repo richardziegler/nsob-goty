@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/internal/Observable';
 import { map, startWith } from 'rxjs/operators';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-bestgame',
@@ -44,7 +45,7 @@ export class BestgameComponent implements OnInit {
   }
 
   remove(game: string) {
-    this.choices = this.choices.filter(x => x !== game);
+    _.pull(this.choices, game);
     this.games.push(game);
     this.games = this.games.sort();
     this.gameControl.setValue('');
