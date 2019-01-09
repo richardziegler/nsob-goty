@@ -7,7 +7,7 @@ import { forkJoin } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class SubmissionService {
+export class BallotsService {
   scoring = [15, 12, 10, 8, 6, 5, 4, 3, 2, 1];
   options = { headers: new HttpHeaders().set('Content-Type', 'application/json')};
   constructor(private http: HttpClient) { }
@@ -26,6 +26,10 @@ export class SubmissionService {
       this.http.post<SingleBallot>(this.betaApi, bestRemasters, this.options),
       this.http.post<SingleBallot>(this.betaApi, mostAnticipated, this.options)
     );
+  }
+
+  getResults() {
+    return this.http.get<any>(this.betaApi, this.options);
   }
 
   buildBallot(ballotTypeId: number, username: string, games: string[]) {
