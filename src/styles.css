@@ -6,8 +6,7 @@
 
 html {
     /* font-family: 'Indie Flower', cursive; */
-    /* font-family: 'Muli', sans-serif; */
-    font-family: 'Bungee Shade', cursive;
+    font-family: 'Muli', sans-serif;
     /* color: palegreen; */
     background-color: lightslategrey;
     
@@ -18,6 +17,7 @@ body {
 }
 
 .heading {
+    font-family: 'Bungee Shade', cursive;
     font-size: 130%;
 }
 /* html::before {
