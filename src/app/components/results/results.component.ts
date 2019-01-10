@@ -11,6 +11,7 @@ import { BallotsService } from 'src/app/services/ballots/ballots.service';
 
 export class ResultsComponent implements OnInit {
   displayedColumns: string[] = ['title', 'total'];
+  loading = true;
   tData = [];
   dataSource;
   @ViewChild(MatSort) sort: MatSort;
@@ -25,6 +26,9 @@ export class ResultsComponent implements OnInit {
       });
       this.dataSource = new MatTableDataSource(this.tData);
       this.dataSource.sort = this.sort;
+      this.loading = false;
+    }, error => {
+      console.log('error', error);
     });
 
 

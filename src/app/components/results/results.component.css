@@ -12,3 +12,16 @@
     display: flex;
     justify-content: center;
   }
+  
+.dirty-table {
+  display: flex;
+  width: 75%;
+  justify-content: space-evenly;
+  margin-bottom: 1em;
+}
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
