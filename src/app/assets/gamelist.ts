@@ -38,6 +38,7 @@ var eligibleGames = [
 "Dandara",
 "Dark Eclipse",
 "Darksiders III",
+"DayZ",
 "Dead Cells",
 "Dead in Vinland",
 "Death Mark",
