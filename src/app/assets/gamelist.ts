@@ -93,6 +93,7 @@ var eligibleGames = [
 "It's Full of Sparks",
 "Just Dance 2019",
 "Just Shapes and Beats",
+"Kenshi",
 "Kingdom Come: Deliverance",
 "Kirby Battle Royale",
 "Kirby Star Allies",
