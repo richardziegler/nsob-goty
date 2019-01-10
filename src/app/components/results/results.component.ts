@@ -12,13 +12,18 @@ import { BallotsService } from 'src/app/services/ballots/ballots.service';
 export class ResultsComponent implements OnInit {
   displayedColumns: string[] = ['Title', 'Total'];
   
+  loading = true;
   tData = [];
 
   constructor(private ballotsService: BallotsService) { }
 
   ngOnInit() {
     this.ballotsService.getResults().subscribe(data => {
-      this.tData = data;
+      const parsedData = JSON.parse(data);
+      this.tData = parsedData.bestGame;
+      this.loading = false;
+    }, error => {
+      console.log('error', error);
     });
 
     // const ctx = "myChart";

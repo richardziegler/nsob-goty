@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule, MatButtonModule, MatStepperModule, MatCardModule } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { BallotComponent } from './components/ballot/ballot.component';
@@ -49,6 +50,7 @@ import { BallotSummaryComponent } from './components/ballot-summary/ballot-summa
     MatStepperModule,
     MatCardModule,
     MatListModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
