@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {MatSort, MatTableDataSource} from '@angular/material';
 import Chart from 'chart.js';
 import { BallotsService } from 'src/app/services/ballots/ballots.service';
-
 
 @Component({
   selector: 'app-results',
@@ -10,16 +10,23 @@ import { BallotsService } from 'src/app/services/ballots/ballots.service';
 })
 
 export class ResultsComponent implements OnInit {
-  displayedColumns: string[] = ['Title', 'Total'];
-  
+  displayedColumns: string[] = ['title', 'total'];
   tData = [];
+  dataSource;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private ballotsService: BallotsService) { }
 
   ngOnInit() {
     this.ballotsService.getResults().subscribe(data => {
-      this.tData = data;
+      const jsonData = JSON.parse(data);
+      jsonData.bestGame.forEach(game => {
+        this.tData.push(game);
+      });
+      this.dataSource = new MatTableDataSource(this.tData);
+      this.dataSource.sort = this.sort;
     });
+
 
     // const ctx = "myChart";
     // var myChart = new Chart(ctx, {
