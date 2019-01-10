@@ -20,6 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MostAnticipatedComponent } from './components/most-anticipated/most-anticipated.component';
 
 import { BallotSummaryComponent } from './components/ballot-summary/ballot-summary.component';
+import { ResultTableComponent } from './components/result-table/result-table.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BallotSummaryComponent } from './components/ballot-summary/ballot-summa
     BallotComponent,
     ResultsComponent,
     MostAnticipatedComponent,
-    BallotSummaryComponent
+    BallotSummaryComponent,
+    ResultTableComponent
   ],
   exports:[
     MatAutocompleteModule,

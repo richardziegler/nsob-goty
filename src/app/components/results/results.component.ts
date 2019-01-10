@@ -10,10 +10,13 @@ import { BallotsService } from 'src/app/services/ballots/ballots.service';
 })
 
 export class ResultsComponent implements OnInit {
-  displayedColumns: string[] = ['title', 'total'];
   loading = true;
   tData = [];
-  dataSource;
+  bestGames; 
+  biggestDisappointments; 
+  biggestSurprise; 
+  bestRemasters; 
+  mostAnticipated;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private ballotsService: BallotsService) { }
@@ -21,11 +24,16 @@ export class ResultsComponent implements OnInit {
   ngOnInit() {
     this.ballotsService.getResults().subscribe(data => {
       const jsonData = JSON.parse(data);
-      jsonData.bestGame.forEach(game => {
-        this.tData.push(game);
-      });
-      this.dataSource = new MatTableDataSource(this.tData);
-      this.dataSource.sort = this.sort;
+      this.bestGames = new MatTableDataSource(jsonData.bestGame);
+      this.bestGames.sort = this.sort;
+      this.biggestDisappointments = new MatTableDataSource(jsonData.biggestDisappointment);
+      this.biggestDisappointments.sort = this.sort;
+      this.biggestSurprise = new MatTableDataSource(jsonData.biggestSurprise);
+      this.biggestSurprise.sort = this.sort;
+      this.bestRemasters = new MatTableDataSource(jsonData.bestRemaster);
+      this.bestRemasters.sort = this.sort;
+      this.mostAnticipated = new MatTableDataSource(jsonData.mostAnticipated);
+      this.mostAnticipated.sort = this.sort;
       this.loading = false;
     }, error => {
       console.log('error', error);
