@@ -56,6 +56,7 @@ var eligibleGames = [
 "Dragon Quest XI: Echoes of an Elusive Age",
 "Dragonball FighterZ",
 "EA Sports UFC 3",
+"Earth Defense Force 5",
 "Echoes III",
 "ELOH",
 "Eternal",
